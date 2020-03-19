@@ -12,7 +12,7 @@ print(resim.dtype) #veriler hangi turde saklaniyor
 cv2.imshow("Brad Pitt",resim)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-#%%
+'''
 import cv2 
 
 resim = cv2.imread("../Resimler/bradpitt.jpg")#resim eger gri olursa 
@@ -24,7 +24,8 @@ print(resim.dtype) #veriler hangi turde saklaniyor
 cv2.imshow("Brad Pitt",resim)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-#%%
+'''
+'''
 import cv2 
 
 resim = cv2.imread("../Resimler/bradpitt.jpg",0)#resim eger gri olursa 
@@ -33,7 +34,8 @@ print(resim)#resim gri iken dondurulecek matris
 cv2.imshow("Brad Pitt",resim)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-#%%
+'''
+'''
 import cv2 
 
 resim = cv2.imread("../Resimler/bradpitt.jpg",0)#resim eger gri olursa 
@@ -47,3 +49,4 @@ print(resim.item(100,200),0)#Red
 cv2.imshow("Brad Pitt",resim)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+'''

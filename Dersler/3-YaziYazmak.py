@@ -8,9 +8,9 @@ fontlar = [
     'FONT_HERSHEY_DUPLEX','FONT_HERSHEY_COMPLEX',
     'FONT_HERSHEY_TRIPLEX','FONT_HERSHEY_COMPLEX_SMALL',
     'FONT_HERSHEY_SCRIPT_SIMPLEX',
-    'FONT_HERSHEY_SCRIPT_COMPLEX']#font listesi olusturduk
+    'FONT_HERSHEY_SCRIPT_COMPLEX']#8 tane fontumuzla yazı yazmak için 8 tane yazı oluşturduk
 imaj = np.ones((720,780,3),np.uint8)*255#beyaz imaj (resim)
-for j in range(8):
+for j in range(8):#font numaraları 8 tane olduğu için sırasıyla 0'dan başlayarak farklı fontlar oluşturacak
     cv2.putText(imaj,fontlar[j],(20,40+j*40),j,1.1,(0,0,0),1)
     '''
         putText fonksiyonun parametreleri
