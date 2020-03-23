@@ -18,17 +18,22 @@ def print_utf8_text(image, text, fontName='DejaVuSerif',
 
     draw.text((yer[0], yer[1]), text,
               fill=(color[0], color[1], color[2],0),font = font)
-    '''
+
+
+    image = np.array(pilImg)  # resmi tekrar opencv'nin kullanabilecegi moda (BGR) ceviriyoruz
+    return image
+'''
+
     PIL.ImageDraw.Draw.text(xy, text, fill=None, font=None)
         Parameters:
-            xy –metnin solust kosesi
+            xy –metnin sol ust kosesi
             text – cizilecek metin
             fill – metin icin kullanilacak renk
             font – ImageFont ornegi
+'''
 
-    '''
-    image = np.array(pilImg)  # resmi tekrar opencv'nin kullanabilecegi moda (BGR) ceviriyoruz
-    return image
+
+
 
 if __name__ == "__main__":
 
@@ -63,3 +68,4 @@ if __name__ == "__main__":
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
