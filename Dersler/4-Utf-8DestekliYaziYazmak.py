@@ -3,7 +3,7 @@
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-import sys
+
 
 # Türkçe karakterleri de yazabilmek icin pillow kutuphanesini kullaniyoruz
 # pillow kutuphanesi bir goruntu isleme kutuphanesidir.Python da goruntu islemleri yapilabilmesi icin olusturulmustur.
@@ -31,9 +31,6 @@ def print_utf8_text(image, text, fontName='DejaVuSerif',
             fill – metin icin kullanilacak renk
             font – ImageFont ornegi
 '''
-
-
-
 
 if __name__ == "__main__":
 
