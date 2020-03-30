@@ -1,7 +1,7 @@
 # OpenCV
  <h4>Proje Klasörleri</h4><br>
  <p>
- Dersler klasöründe OpenCV'yi öğrenmek için izlenilen video derslerden, kitaplardan öğrenilenler kodlanacak ve kodlara açıklamalar eklenecektir.(Kaynakça belirtilecek.)</p>
+ Dersler klasöründe OpenCV'yi öğrenmek için izlenilen video derslerden, kitaplardan öğrenilenler kodlanacak ve kodlara açıklamalar eklenecektir.</p>
  <p>
  Uygulamalar klasöründe ise belirli dersler izlendikten sonra ortaya temel seviyede güzel uygulamalar çıkarılacaktır.</p>
 <p>
