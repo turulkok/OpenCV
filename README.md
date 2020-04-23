@@ -1,13 +1,18 @@
 # OpenCV
  <h4>Proje Klasörleri</h4><br>
  <p>
- Dersler klasöründe OpenCV'yi öğrenmek için izlenilen video derslerden, kitaplardan öğrenilenler kodlanacak ve kodlara açıklamalar eklenecektir.</p>
+ Dersler klasöründe OpenCV'yi öğrenmek için gerekli araştırmalar yapılacak ve kodlar oluşturulacak.(videolar,makaleler,kitap...vs)</p>
  <p>
- Uygulamalar klasöründe ise belirli dersler izlendikten sonra ortaya temel seviyede güzel uygulamalar çıkarılacaktır.</p>
+ Uygulamalar klasöründe temel seviye öğrenme işlemi başarıyla gerçekleştirildikten sonra OpenCV ile çeşitli uygulamalar yapılacaktır.</p>
 <p>
- Resimler klasörümüz içerisinde ise uygulamalarda kullandığımız resimler bulunacaktır.(ileride videolar klasörü oluşturulacaktır.)
+ Resimler klasöründe derslerde ve uygulamalarda kullandığımız resimler bulunacaktır.
 </p>
-
+<p>
+ Videolar klasöründe derslerde ve uygulamalarda kullandığımız videolar bulunacaktır.
+</p>
+<p>
+ Son olarak Cascades klasöründe derslerde ve uygulamalarda kullandığımız cascadeler(sınıflandırıcılar) bulunacaktır.
+</p>
 </p><strong>Kaynakça</strong>
 <ul>
  <li>Aksoy, Ahmet. <i>OpenCV ve Python ile Eğlenceli Projeler ve Oyunlar</i>. Abaküs Yayınları, İstanbul: 2019. </li>
