@@ -7,7 +7,7 @@ gri = cv2.cvtColor(foto, cv2.COLOR_BGR2GRAY)
 yuz_belirleme = cv2.CascadeClassifier(
     '../Cascades/haarcascade_frontalface_default.xml')
 
-yuzler = yuz_belirleme.detectMultiScale(gri,1.075,5)
+yuzler = yuz_belirleme.detectMultiScale(gri,1.5,5)
 
 for (x,y,w,h) in yuzler:
     cv2.rectangle(foto,(x,y),(x+w,y+h),(255,0,0),2)
