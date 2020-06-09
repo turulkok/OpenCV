@@ -18,7 +18,7 @@ while True:
     )
     for (x,y,w,h) in yuzler:
         cv2.rectangle(kare, (x, y), (x + w, y + h), (255, 0, 0), 2)
-        gri_kutu = gri[y:y+h,x:x+w]
+        gri_kutu = gri[y:y+h,x:x+w] # y'den (y+h)'ye kadar ve x'den (x+w)'ye kadar
         renkli_kutu = kare[y:y+h, x:x+w]
 
         gozler = gozCascade.detectMultiScale(gri_kutu)

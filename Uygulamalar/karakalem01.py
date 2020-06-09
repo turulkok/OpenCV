@@ -4,8 +4,8 @@ deltax = 0
 deltay = 0
 
 kamera = cv2.VideoCapture(0)
-kamera.set(3,640)
-kamera.set(4,480)
+kamera.set(3,640) #3 genislik
+kamera.set(4,480) #4 yuksekligi ifade eder
 
 while True:
     ret, kare = kamera.read()

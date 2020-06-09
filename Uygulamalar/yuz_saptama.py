@@ -11,7 +11,7 @@ while True:
     #ikinci deger kare yakalanan kareyi ifade eden narraydir
     kare = cv2.flip(kare,1)#kamera ters ise -1 , aynalama icin 1
     gri = cv2.cvtColor(kare, cv2.COLOR_BGR2GRAY)#griye cevirme islemi
-    #yuz saptama islemini gri tonlamada yapiyoruz
+    #yuz saptama islemininde daha iyi bir sonuc için gri tonlamada yapiyoruz
 
     # detectMultiScale goruntu icerisinde birden fazla yuz varsa onlari yakalar
     yuzler = yuzCascade.detectMultiScale(
@@ -31,8 +31,8 @@ while True:
         #dikdortgen rengi, cizgi kalinligi)
 
     cv2.imshow('kare',kare) # goruntuleme islemi
-    k = cv2.waitKey(1) & 0xff
+    k = cv2.waitKey(1) & 0xff # q tusuna basildiginda pencerenen kapanmasi icin
     if k == 27 or k==ord('q'):break
 
-kamera.release()
+kamera.release() #is bittiginde kamerayi serbest birak
 cv2.destroyAllWindows()

@@ -14,10 +14,10 @@ MAVI = ((110,50,50),(130,255,255))
 TURUNCU = ((160,100,47),(179,255,255))
 SARI = ((10,100,100),(40,255,255))
 
-altRenk, ustRenk = SARI
+altRenk, ustRenk = MAVI# rengimizi mavi olarak aldik
 
 
-
+#dahili kamerayi okuma islemi
 kamera = cv2.VideoCapture(0)
 
 cv2.namedWindow('kare')
@@ -27,18 +27,18 @@ cv2.moveWindow('maske',GENISLIK+deltax,10)
 
 while True:
     (ok,kare) = kamera.read()
-
-    kare = imutils.resize(kare,GENISLIK) #en boy oraninin korunmasini saglar genislik degerine gore yuksekligi oranliyor
+    # en boy oraninin korunmasini saglar genislik degerine gore yuksekligi oranliyor
+    kare = imutils.resize(kare,GENISLIK)
     hsv = cv2.GaussianBlur(kare,(25,25),0) # detaylari azaltmak icin bulaniklastirma
     hsv = cv2.cvtColor(hsv, cv2.COLOR_BGR2HSV)#bgrdan HSV'ye donusturme islemi
 
     maske = cv2.inRange(hsv,altRenk,ustRenk)#deger araliklari
-    maske = cv2.erode(maske,None,iterations=3)
-    maske = cv2.dilate(maske,None,iterations=3)
-    kopya = maske.copy()
+    maske = cv2.erode(maske,None,iterations=3)#asindirma islemi,3 kez tekrarlaniyor
+    maske = cv2.dilate(maske,None,iterations=3)#genisletme islemi 3 kez tekrarlaniyor
+    kopya = maske.copy()#maskemizi kopyaliyoruz
 
 
-    sonuc = cv2.bitwise_and(kare,kare,mask= maske)
+    sonuc = cv2.bitwise_and(kare,kare,mask= maske)#maskenin isleme alinmasi
     cv2.imshow('kare',kare)
     cv2.imshow('maske',maske)
     cv2.imshow('sonuc',sonuc)

@@ -5,7 +5,7 @@ import imutils
 from collections import deque
 import numpy as np
 
-
+#renk araliklarimiz
 GENISLIK = 800  # GENISLIK
 NOKTA_SAYISI=100 #cizgiyi olusturan nokta sayisinin max 100 olmasini istiyoruz
 YESIL = ((29, 86, 6), (64, 255, 255))
@@ -14,6 +14,7 @@ MAVI = ((110, 50, 50), (130, 255, 255))
 TURUNCU = ((160, 100, 47), (179, 255, 255))
 SARI = ((10, 100, 100), (40, 255, 255))
 
+#rengimizi mavi sectik
 altRenk, ustRenk = MAVI
 
 
@@ -25,19 +26,28 @@ noktalar= deque(maxlen=NOKTA_SAYISI) #boru mekanizmasi
 cv2.namedWindow('kare')
 cv2.moveWindow('kare', 10, 10)
 while True:
+    #kamera okuma islemi
     (ok, kare) = kamera.read()
-
+    # en boy oraninin korunmasini saglar genislik degerine gore yuksekligi oranliyor
     kare = imutils.resize(kare, GENISLIK)
+    #kamerayi aynalama islemi
+    kare = cv2.flip(kare,1)
+    #detaylari kaybetmek icin blurlama islemi
     hsv = cv2.GaussianBlur(kare, (25,25), 0)
+    #bgr renk uzayindan hsv renk uzayina cevirme islemi
     hsv = cv2.cvtColor(hsv, cv2.COLOR_BGR2HSV)
-
+    #deger araliklari
     maske = cv2.inRange(hsv, altRenk, ustRenk)
-    maske = cv2.erode(maske, None, iterations=1)
-    maske = cv2.dilate(maske, None, iterations=1)
-    kopya = maske.copy()
+    maske = cv2.erode(maske, None, iterations=1)#asindirma islemi
+    maske = cv2.dilate(maske, None, iterations=1)#genisletme islemi
+    kopya = maske.copy()#maskeyi kopyalama
 
     _,konturlar,_ = cv2.findContours(kopya, cv2.RETR_EXTERNAL,
                                 cv2.CHAIN_APPROX_SIMPLE)
+    # cv2.findContours(orjinal imaj = imaj, mod = cv2.RETR_EXTERNAL, metod = cv2.CHAIN_APPROX_SIMPLE)
+    # mod : kontur bulma yontemi (RETR_LIST,RETR_EXTERNAL,RETR_CCOMP,RETR_TREE)
+    # metod : kontur yaklasim yontemi (approximation)
+
     merkez = None
     if len(konturlar) > 0:
         cmax = max(konturlar, key=cv2.contourArea)#konturlarin icerisinde en buyuk alana sahip olani bulur
